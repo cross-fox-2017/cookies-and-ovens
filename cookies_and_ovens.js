@@ -8,25 +8,43 @@
 //
 //
 // Your code here
-class Bake {
-  constructor(arg) {
-    this._cakeName = arg['cakeName']
-    this._bakeTime = arg['bakeTime']
-    this._random =  Math.floor(Math.random() * 4) +5
-  }
-  oven(){
-    for (var i = 0; i < 12; i++) {
-      if (i < this._random) {
-        console.log(`${this._cakeName} 'Mentah'`);
-      }else if (i == this._random){
-        console.log(`${this._cakeName} 'Matang'`);
-      }else if (i > this._random) {
-        console.log(`${this._cakeName} 'Gosong'`);
-      }
-    }
+class Ingredient {
+  constructor(flavour) {
+    this._flavour = flavour
   }
 }
 
-let masak = new Bake({cakeName: 'Chocholate Cake'})
+class Bake extends Ingredient {
+  constructor(flavour, chefTime) {
+    super(flavour)
+    this._bakeTime = 0
+    this._chefTime = chefTime
+  }
+  oven(){
+    if (this._flavour == 'Chocolate') {
+      this._bakeTime = 10
+    }else if (this._flavour == 'Cheese') {
+      this._bakeTime = 20
+    }
+    return this._bakeTime
+  }
+  baking(){
+    if (this._chefTime < this._bakeTime) {
+      return 'Belum Matang'
+    }else if (this._chefTime == this._bakeTime) {
+      return 'Sudah Matang'
+    }else if(this._chefTime > this._bakeTime){
+      return 'Gosong'
+    }
+  }
 
+  bakingResult(){
+    this.baking()
+    console.log(`Your ${this._flavour} Cake is ${this.baking()}`);
+  }
+
+}
+
+let masak = new Bake('Chocolate',30)
 masak.oven()
+masak.bakingResult()
