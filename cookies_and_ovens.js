@@ -1,10 +1,10 @@
 // Answer These Questions:
 //
-// - What are essential classes?
-// - What attributes will each class have?
+// - What are essential classes? Kue, KueKacang, KueCoklat
+// - What attributes will each class have? nama, status, time, lama_matang
 // - What interface will each class provide?
-// - How will the classes interact with each other?
-// - Which classes will inherit from others, if any?
+// - How will the classes interact with each other? inheritance
+// - Which classes will inherit from others, if any? KueKacang, KueCoklat
 //
 //
 // Your code here
