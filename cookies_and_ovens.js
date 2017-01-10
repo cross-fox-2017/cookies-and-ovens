@@ -54,3 +54,18 @@ var daftarKue = [{
   namaKue: "Kue Sagu",
   waktuMasak: 18
 }]
+
+console.log(`Siap-Siap Memasak ${daftarKue[0].namaKue}`);
+var makanan = new Masak(daftarKue[0])
+makanan.oven();
+var i = 1;
+var panggilMasak = setInterval(function() {
+        if (i == daftarKue.length) {
+          clearInterval(panggilMasak)
+        } else {
+            console.log(`Siap-Siap Memasak ${daftarKue[i].namaKue}`);
+            var makanan = new Masak(daftarKue[i])
+            makanan.oven();
+            i++
+        }
+}, 20000)
