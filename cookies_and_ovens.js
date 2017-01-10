@@ -8,3 +8,40 @@
 //
 //
 // Your code here
+"use strict"
+
+class Cookies {
+  constructor(setTime) {
+    this.timeCook    = setTime;
+    this.waktuMatang = 0;
+    this.status      = "Mentah";
+  }
+
+  cookCondition (){
+    this.timeCook++;
+    if(this.timeCook == 5){this.status = "Mentah"}
+    if(this.timeCook <= 10){this.status = "Hampir matang"}
+    if(this.timeCook == this.waktuMatang){this.status = "Matang"}
+    if (this.timeCook > this.waktuMatang){this.status = "Tutung"}
+  }
+}
+
+class KueKacang extends Cookies {
+  constructor(setTime, waktuMatang) {
+    super(setTime, waktuMatang)
+    this.timeSet     = setTime;
+    this.waktuMatang = 12
+  }
+}
+
+class KueCoklat extends Cookies {
+  constructor(setTime, waktuMatang) {
+    super(setTime, waktuMatang)
+    this.timeSet = 14;
+  }
+}
+
+let resultCookies = new Cookies();
+    resultCookies.cookCondition(5);
+
+consloe.log(resultCookies);
