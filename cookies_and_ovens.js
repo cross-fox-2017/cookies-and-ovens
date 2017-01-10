@@ -19,7 +19,7 @@ class Cookies {
 
   cookCondition (){
     this.timeCook++;
-    if(this.timeCook == 5){this.status = "Mentah"}
+    if(this.timeCook <= 5){return this.status}
     if(this.timeCook < 10){this.status = "Hampir matang"}
     if(this.timeCook == this.waktuMatang){this.status = "Matang"}
     if(this.timeCook > this.waktuMatang){this.status = "Tutung"}
@@ -40,7 +40,7 @@ class KueCoklat extends Cookies {
   }
 }
 
-let resultCookies = new KueCoklat(7);
+let resultCookies = new KueCoklat(1);
     resultCookies.cookCondition();
 
 console.log(resultCookies);
