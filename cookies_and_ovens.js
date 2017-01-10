@@ -33,6 +33,8 @@ class Oven{
     this.kue = kue;
     this.recipe = "";
     this.cook = false;
+    this.siapMakan = [];
+    this.kondisi = "Belum Matang"
   }
   pilihResep(){
     switch (this.kue) {
@@ -49,21 +51,37 @@ class Oven{
   }
   ovenning(){
     let randomTime = Math.floor(Math.random()*10+5)
-    this.timer+= randomTime
-    if (this.timer < this.recipe.waktuMasak){
-      console.log(`${this.recipe.nama} Belum Matang`);
-    } else if (this.timer > this.recipe.waktuMasak+10){
-      console.log(`${this.recipe.nama} Hangus :'(`);
+    if (this.cook){
+      this.timer+= randomTime
+      if (this.timer < this.recipe.waktuMasak){
+        console.log(`${this.recipe.nama} Belum Matang`);
+        this.kondisi = "Belum Matang"
+      } else if (this.timer > this.recipe.waktuMasak+10){
+        console.log(`${this.recipe.nama} Hangus :'(`);
+        this.kondisi = "Hangus"
+      } else {
+        return console.log(`${this.recipe.nama} Matang, Yeah!!`);
+        this.kondisi = "Matang"
+      }
     } else {
-      return console.log(`${this.recipe.nama} Matang, Yeah!!`);
+      return "Oven Kosong, silahkan masukkan adonan"
     }
+  }
+  angkatKue(){
+    this.cook = false;
+    if(this.kondisi == "Matang"){
+      this.siapMakan.push(this.recipe.nama)
+    }
+    return console.log(`punya ${this.siapMakan.length} kue siap makan`);
   }
 }
 
 var oven = new Oven('kacang')
 oven.pilihResep()
+oven.masukOven()
 oven.ovenning()
 oven.ovenning()
 oven.ovenning()
 oven.ovenning()
 oven.ovenning()
+oven.angkatKue()
