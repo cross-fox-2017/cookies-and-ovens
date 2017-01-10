@@ -20,28 +20,41 @@ class Cookies {
   cookCondition (){
     this.timeCook++;
     if(this.timeCook == 5){this.status = "Mentah"}
-    if(this.timeCook <= 10){this.status = "Hampir matang"}
+    if(this.timeCook < 10){this.status = "Hampir matang"}
     if(this.timeCook == this.waktuMatang){this.status = "Matang"}
-    if (this.timeCook > this.waktuMatang){this.status = "Tutung"}
+    if(this.timeCook > this.waktuMatang){this.status = "Tutung"}
   }
 }
 
 class KueKacang extends Cookies {
   constructor(setTime, waktuMatang) {
-    super(setTime, waktuMatang)
-    this.timeSet     = setTime;
+    super(setTime)
     this.waktuMatang = 12
   }
 }
 
 class KueCoklat extends Cookies {
   constructor(setTime, waktuMatang) {
-    super(setTime, waktuMatang)
-    this.timeSet = 14;
+    super(setTime)
+    this.waktuMatang = 10;
   }
 }
 
-let resultCookies = new Cookies();
-    resultCookies.cookCondition(5);
+let resultCookies = new KueCoklat(7);
+    resultCookies.cookCondition();
 
-consloe.log(resultCookies);
+console.log(resultCookies);
+resultCookies.cookCondition();
+console.log(resultCookies)
+resultCookies.cookCondition();
+console.log(resultCookies)
+resultCookies.cookCondition();
+console.log(resultCookies)
+resultCookies.cookCondition();
+console.log(resultCookies)
+resultCookies.cookCondition();
+console.log(resultCookies)
+resultCookies.cookCondition();
+console.log(resultCookies)
+resultCookies.cookCondition();
+console.log(resultCookies)
