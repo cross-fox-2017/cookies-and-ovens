@@ -25,7 +25,7 @@ class Cookies {
 }
 
 class Oven {
-  constructor() {
+  constructor() { // bedakan dengan constructor(tree = [])
     this.status = "";
     this.time = 0;
     this.arrCookies = [];
