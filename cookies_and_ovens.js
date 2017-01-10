@@ -43,3 +43,14 @@ class Masak {
 
     }
 }
+
+var daftarKue = [{
+    namaKue: "Kue Kacang",
+    waktuMasak: 15
+}, {
+    namaKue: "Kue Coklat",
+    waktuMasak: 17
+},{
+  namaKue: "Kue Sagu",
+  waktuMasak: 18
+}]
