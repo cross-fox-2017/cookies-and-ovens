@@ -52,13 +52,14 @@ class cake{
 class chocolate extends cake{
 
       constructor(nama){
-          super(nama,time,status)
+          super(nama)
           this._time_cooked = 10;
 
       }
 
       baked(){
-          super.baked();
+          super.baked()
+
       }
 
 }
@@ -81,10 +82,10 @@ class strawberry extends cake{
 }
 
 let choc = new chocolate('chocolate');
-
-    do{
-      choc.baked();
-    }while(choc._status != "Over Cooked !")
+console.log(choc);
+    // do{
+    //   choc.baked();
+    // }while(choc._status != "Over Cooked !")
 
 // choc.baked();
 // choc.baked();
